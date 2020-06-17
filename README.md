@@ -2,7 +2,6 @@
 <blockquote align="center">Desafio aplicado no BootCamp GoStack</blockquote>
 
 <p align="center">
-  [![License](https://img.shields.io/github/license/Espeto/conceitos-nodejs)](https://github.com/Espeto/conceitos-nodejs/blob/master/LICENSE)
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 </p>
 
@@ -10,7 +9,7 @@
 - ExpressJS
 - Uuidv4
 
-## Conteúdo Utilizados
+## Conteúdo Utilizado
 - API REST
 - Rotas
 - MiddleWares
