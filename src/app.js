@@ -43,18 +43,20 @@ app.get("/repositories", (request, response) => {
 app.post("/repositories", (request, response) => {
   const { title, url, techs } = request.body;
 
-  const repositorie = {id: uuid(), title: title, url: url, techs: techs, likes: 0};
+  const repository = {id: uuid(), title: title, url: url, techs: techs, likes: 0};
   
-  repositories.push(repositorie);
+  repositories.push(repository);
 
-  return response.json(repositorie);
+  return response.json(repository);
 });
 
 app.put("/repositories/:id", (request, response) => {
   const { repoIndex } = request;
   const { title, url, techs } = request.body; 
+  const { id } = request.params;
 
-  const updatedRepo = { id: id, title: title, url: url, techs: techs};
+  const likes = repositories[repoIndex].likes;
+  const updatedRepo = { id: id, title: title, url: url, techs: techs, likes: likes};
 
   repositories[repoIndex] = updatedRepo;
 
@@ -63,13 +65,25 @@ app.put("/repositories/:id", (request, response) => {
 });
 
 app.delete("/repositories/:id", (request, response) => {
-  // TODO
+  const { repoIndex } = request;
+
+  repositories.splice(repoIndex, 1);
+
+  return response.status(204).send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {
-  // TODO
+  const { repoIndex } = request;
+
+  let newLikeVal = repositories[repoIndex].likes + 1;
+  repositories[repoIndex].likes = newLikeVal;
+  
+  return response.json(repositories[repoIndex]);
 });
 
-app.listen(3333);
+// Insomnia Test Purpose
+//app.listen(3333, () => {
+//  console.log('Back-end started');
+//});
 
 module.exports = app;
