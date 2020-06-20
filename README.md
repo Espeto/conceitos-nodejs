@@ -2,7 +2,7 @@
 <blockquote align="center">Desafio aplicado no BootCamp GoStack</blockquote>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
+  <img alt="License" src="https://img.shields.io/github/license/espeto/conceitos-nodejs">
 </p>
 
 ## Ferramentas
