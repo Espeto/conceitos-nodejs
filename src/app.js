@@ -81,9 +81,8 @@ app.post("/repositories/:id/like", (request, response) => {
   return response.json(repositories[repoIndex]);
 });
 
-// Insomnia Test Purpose
-//app.listen(3333, () => {
-//  console.log('Back-end started');
-//});
+app.listen(3333, () => {
+  console.log('Back-end started');
+});
 
 module.exports = app;
